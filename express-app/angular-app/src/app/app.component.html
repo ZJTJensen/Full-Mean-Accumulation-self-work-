@@ -1,0 +1,14 @@
+<p>Hello world</p>
+<fieldset>
+  <legend>Task New Component</legend>
+  <form (submit)="onSubmit()">
+    <input type="text" name="task.title" [(ngModel)]="task.title" placeholder="Enter task title here...">
+    <input type="text" name="task.description" [(ngModel)]="task.description" placeholder="Enter task description here...">
+    <input type="submit" value="Create Task">
+  </form>
+</fieldset>
+
+<h2 *ngFor ="let task of tasks">
+  <p>{{task.title}}</p>
+  <button (click)="onDelete(task._id)">Delete</button>
+</h2>
